@@ -90,7 +90,9 @@ The average score for all 20 agents during training
 
 As it can be seen and extracted from the Jupyter notebook, the average reward and episode in which the environment was solved is as follows:
 
-<img width="777" alt="Screen Shot 2021-06-29 at 5 51 25 PM" src="https://user-images.githubusercontent.com/25883464/123829307-a36e2a00-d902-11eb-93f7-65c55a337d17.png">
+<img width="609" alt="Screen Shot 2021-06-29 at 7 33 34 PM" src="https://user-images.githubusercontent.com/25883464/123842285-e7682b80-d910-11eb-9250-ba82eb396f1f.png">
+
+111 episodes
 
 ### 6. Ideas to improve
 
