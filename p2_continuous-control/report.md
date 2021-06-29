@@ -45,16 +45,24 @@ There are 20 agents. Each observe a state with length: 33. The state contains ag
 
 Consist of two network architectures *actor-critic* with the corresponding architecture:
 
-
+**Actor**:
  ```    self.fc1 = nn.Linear(state_size, fc1_units)
         self.fc2 = nn.Linear(fc1_units, fc2_units)
         self.fc3 = nn.Linear(fc2_units, action_size)
 
  ```
+ 
+ **Critic**
+  ``` 
+ self.fcs1 = nn.Linear(state_size, fcs1_units)
+        self.fc2 = nn.Linear(fcs1_units+action_size, fc2_units)
+        self.fc3 = nn.Linear(fc2_units, 1)
+        
+  ``` 
  where the input size = state_size = 33
  
- the layer structure is as follows:
-  ``` 33 units (inputs) -o 400 [Fully-connected-layer] -o 300 [fully-connected-layer] - ReLU - 4 [action] ```
+ 
+ the general layer or networks architecture consist of fully connected layers with ReLU activation function, as can be also seen in `model.py`file in this repository
   
 ### 4.1 Network hyper-parameters
 
@@ -80,9 +88,14 @@ jupyter notebook in this repo
 ![Screen Shot 2021-06-29 at 1 24 04 PM](https://user-images.githubusercontent.com/25883464/123789267-47dd7580-d8dd-11eb-89b3-0bfa5838125a.png)
 The average score for all 20 agents during training
 
+As it can be seen and extracted from the Jupyter notebook, the average reward and episode in which the environment was solved is as follows:
+
+<img width="777" alt="Screen Shot 2021-06-29 at 5 51 25 PM" src="https://user-images.githubusercontent.com/25883464/123829307-a36e2a00-d902-11eb-93f7-65c55a337d17.png">
+
 ### 6. Ideas to improve
 
 - Try other network architectures that can learn faster such A2C or A3C
 - Fine tune units in the network, altering the number of nodes to improve convergence
 - try different replay buffers sizes to dismiss less old values 
+- As suggested and later investigated, it could be improved by implementing Prioritized Experience Replay using *Sum Tree* 
 
